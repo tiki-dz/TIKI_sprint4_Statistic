@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-// const something = require('./something')
-// router.use('/', something)
+const statistic = require('./statisticRoutes')
 
+router.use('/statistic', statistic)
 module.exports = router
