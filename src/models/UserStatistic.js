@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      
       deactivatedClient: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -39,8 +38,7 @@ module.exports = (sequelize, DataTypes) => {
       deactivatedPartner: {
         type: DataTypes.INTEGER,
         allowNull: false
-      },
-      
+      }
     },
     {
       classMethods: {

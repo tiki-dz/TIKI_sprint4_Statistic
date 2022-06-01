@@ -9,12 +9,12 @@ module.exports = (sequelize, DataTypes) => {
       },
       name: {
         type: DataTypes.STRING(45),
-        allowNull: false,
+        allowNull: false
       },
       nbUser: {
         type: DataTypes.INTEGER,
         allowNull: false
-      },
+      }
     },
     {
       classMethods: {

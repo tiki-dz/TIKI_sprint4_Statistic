@@ -3,19 +3,17 @@ module.exports = (sequelize, DataTypes) => {
     'SubCategoryStatistic',
     {
       SubCategory: {
-        type: DataTypes.String(45),
-        autoIncrement: true,
+        type: DataTypes.STRING(45),
         primaryKey: true
       },
       category: {
-        type: DataTypes.String(45),
-        allowNull: false,
-        
+        type: DataTypes.STRING(45),
+        allowNull: false
       },
       totalEvents: {
         type: DataTypes.INTEGER,
         allowNull: false
-      },
+      }
     },
     {
       classMethods: {

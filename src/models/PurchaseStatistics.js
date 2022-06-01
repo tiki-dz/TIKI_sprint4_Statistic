@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       date: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: false
       },
       totalPurchase: {
         type: DataTypes.INTEGER,
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       income: {
         type: DataTypes.INTEGER,
         allowNull: false
-      },
+      }
     },
     {
       classMethods: {

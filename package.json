@@ -8,9 +8,6 @@
   },
   "dependencies": {
     "amqplib": "^0.8.0",
-    "bcrypt": "^5.0.1",
-    "bcrypt-nodejs": "^0.0.3",
-    "bluebird": "^3.7.2",
     "bull": "^4.8.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
