@@ -1,4 +1,4 @@
-const { PurchaseStatistics, SubCategoryStatistic, UserStatistic } = require('../models')
+const { PurchaseStatistics, SubCategoryStatistic, UserStatistic, City } = require('../models')
 
 function getUserStatistic (req, res) {
   try {
@@ -27,4 +27,13 @@ function getPurchaseStatistics (req, res) {
   }
 }
 
-module.exports = { getUserStatistic, getSubCategoryStatistic, getPurchaseStatistics }
+function getCityStatistics (req, res) {
+  try {
+    const city = City.findAll()
+    res.status(200).send().json({ success: true, data: city, message: 'success' })
+  } catch (error) {
+    res.status(500).send({ error: error, success: false, message: 'processing err' })
+  }
+}
+
+module.exports = { getUserStatistic, getSubCategoryStatistic, getPurchaseStatistics, getCityStatistics }
