@@ -68,6 +68,9 @@ async function eventSwitcher (event, payload) {
     case 'UPDATE-USER-STAT':
       await eventHendler.updateUser(payload)
       break
+    case 'ADD-PURCHASE-STAT':
+      await eventHendler.addPurchase(payload)
+      break
 
     default:
       break
