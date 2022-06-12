@@ -1,4 +1,4 @@
-const { SubCategoryStatistic, UserStatistic, PurchaseStatistics } = require('../models')
+const { SubCategoryStatistic, UserStatistic, PurchaseStatistics, City } = require('../models')
 
 async function addSubCategory (payload) {
   try {
@@ -113,4 +113,36 @@ async function addPurchase (payload) {
     console.log(error)
   }
 }
-module.exports = { updateSubCategory, addSubCategory, addEvent, addEventToSubCategory, deleteEvent, deletEventFromSubCategory, updateUser, addPurchase }
+async function addToCity (payload) {
+  try {
+    const city = payload.city
+    const cityInstance = await City.findOne({
+      where: {
+        name: city
+      }
+    })
+    cityInstance.nbUser += 1
+    cityInstance.save()
+
+    console.log('event added ', cityInstance)
+  } catch (error) {
+    console.log(error)
+  }
+}
+async function removeFromCity (payload) {
+  try {
+    const city = payload.city
+    const cityInstance = await City.findOne({
+      where: {
+        name: city
+      }
+    })
+    cityInstance.nbUser -= 1
+    cityInstance.save()
+
+    console.log('event added ', cityInstance)
+  } catch (error) {
+    console.log(error)
+  }
+}
+module.exports = { updateSubCategory, addSubCategory, addEvent, addEventToSubCategory, deleteEvent, deletEventFromSubCategory, updateUser, addPurchase, addToCity, removeFromCity }

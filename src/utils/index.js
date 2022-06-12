@@ -44,7 +44,6 @@ module.exports.PublishMessage = (channel, BINDING_KEY, message) => {
   console.log(' [x] send %s', message)
 }
 
-// TODO just an example
 async function eventSwitcher (event, payload) {
   switch (event) {
     case 'UPDATE-SUBCATEGORY':
@@ -70,6 +69,12 @@ async function eventSwitcher (event, payload) {
       break
     case 'ADD-PURCHASE-STAT':
       await eventHendler.addPurchase(payload)
+      break
+    case 'REMOVE-FROM-CITY':
+      await eventHendler.removeFromCity(payload)
+      break
+    case 'ADD-TO-CITY':
+      await eventHendler.addToCity(payload)
       break
 
     default:
