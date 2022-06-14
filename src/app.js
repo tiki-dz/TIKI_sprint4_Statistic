@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const indexRouter = require('./routes/indexRoutes')
 const rabbitMq = require('./utils')
+const eurekaHelper = require('./eurekaHelper/eurekaHelper.js')
 // const usersRouter = require("./routes/users");
 // const Account = require("./models/Account");
 // const User = require("./models/User");
@@ -29,4 +30,5 @@ app.use('/api', indexRouter)
 app.listen(5004)
 module.exports = app
 console.log('server start on port 5004')
+eurekaHelper.registerWithEureka('service-stat', process.env.PORT)
 rabbitMq.CreatChannel()
