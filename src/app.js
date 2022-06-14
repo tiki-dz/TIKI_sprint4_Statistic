@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const { sequelize } = require('./models')
 // const createError = require("http-errors")
 const express = require('express')
@@ -30,5 +33,6 @@ sequelize.query('SET FOREIGN_KEY_CHECKS = 0').then(function () {
 app.listen(5004)
 module.exports = app
 console.log('server start on port 5004')
+console.log(process.env.PORT)
 eurekaHelper.registerWithEureka('service-stat', process.env.PORT)
 rabbitMq.CreatChannel()
